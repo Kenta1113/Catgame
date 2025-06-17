@@ -20,6 +20,7 @@ public class EnemyControllere : MonoBehaviour
         {
             transform.localScale = new Vector3(-defaultscale.x, defaultscale.y, defaultscale.z);
         }
+        
     }
 
     void Update()

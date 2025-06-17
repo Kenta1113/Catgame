@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1447156441162508757}
   m_Layer: 0
   m_Name: Scratch
-  m_TagString: Untagged
+  m_TagString: Attack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
