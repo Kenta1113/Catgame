@@ -1,4 +1,5 @@
 using System.Collections;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class CatMove : MonoBehaviour
@@ -7,6 +8,8 @@ public class CatMove : MonoBehaviour
     [SerializeField] float _jump = 5f;
     [SerializeField] float _scratchDuration = 0.3f; // スクラッチ表示時間
     [SerializeField] private Sprite attackSprite;    // 攻撃時のスプライト
+    [SerializeField] GameObject _scratchPrehub;
+    [SerializeField] Transform _claw = default;
 
     private Animator anim;
     private Rigidbody2D rb;
@@ -35,7 +38,7 @@ public class CatMove : MonoBehaviour
             // 左右反転
             if (move != 0)
             {
-                transform.localScale = new Vector3(Mathf.Sign(move), 1, 1);
+               transform.localScale = new Vector3(Mathf.Sign(move), 1, 1);
             }
 
             // ジャンプ
@@ -49,10 +52,24 @@ public class CatMove : MonoBehaviour
         }
 
         // 攻撃処理
-        if (Input.GetButtonDown("Fire1") && !isScratching)
+        if (Input.GetButtonDown("Fire1") && !isScratching &&isGrounded)
         {
             StartCoroutine(DoScratch());
             Debug.Log("攻撃");
+
+            var scratch = Instantiate(_scratchPrehub);
+            scratch.transform.position = _claw.position;
+             int direction = transform.localScale.x > 0 ? 1 : -1;
+
+            Vector3 scratchScale =scratch.transform.localScale;
+            scratchScale.x=Mathf.Abs(scratchScale.x)*direction;
+            scratch.transform.localScale = scratchScale;
+
+            ScratchController bc = scratch.GetComponent<ScratchController>();
+            if (bc != null)
+                {
+                bc.SetDirection(direction);
+            }
         }
     }
 
