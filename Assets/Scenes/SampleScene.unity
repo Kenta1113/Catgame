@@ -651,6 +651,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1430702842216199590, guid: a16e76d05d858fd40b09b44476a14b3b, type: 3}
   m_PrefabInstance: {fileID: 7775006589293258677}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1226045830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1226045810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dda4fe1c87b7e347b6bb111e66a5393, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 3
+  _jump: 5
+  _scratchDuration: 0.3
+  attackSprite: {fileID: 21300000, guid: a6d7610a5ac807d4eabc60725799f3b6, type: 3}
+  _scratchPrehub: {fileID: 3973759278028119220, guid: 910fd87055141da4ba68d20c10501605, type: 3}
+  _claw: {fileID: 1882096151}
 --- !u!1 &1706429758
 GameObject:
   m_ObjectHideFlags: 0
@@ -1365,7 +1383,7 @@ PrefabInstance:
     - target: {fileID: 2416084786537532917, guid: a16e76d05d858fd40b09b44476a14b3b, type: 3}
       propertyPath: _clawPrehub
       value: 
-      objectReference: {fileID: 3973759278028119220, guid: 910fd87055141da4ba68d20c10501605, type: 3}
+      objectReference: {fileID: 236760302932932708, guid: 0df7110be9bb5c946a447b496a587fd5, type: 3}
     - target: {fileID: 2416084786537532917, guid: a16e76d05d858fd40b09b44476a14b3b, type: 3}
       propertyPath: attackSprite
       value: 
@@ -1424,7 +1442,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1430702842216199590, guid: a16e76d05d858fd40b09b44476a14b3b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1882096151}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6672867556906224263, guid: a16e76d05d858fd40b09b44476a14b3b, type: 3}
+      insertIndex: 4
+      addedObject: {fileID: 1226045830}
   m_SourcePrefab: {fileID: 100100000, guid: a16e76d05d858fd40b09b44476a14b3b, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
