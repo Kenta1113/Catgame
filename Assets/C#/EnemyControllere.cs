@@ -76,5 +76,12 @@ public class EnemyControllere : MonoBehaviour
                 Debug.Log("Ç‚ÇÁÇÍÇΩÅ`");
             }
         }
+        if (collision.gameObject.CompareTag("Item"))
+        {
+            {
+                _hp = _hp + 1;
+                Debug.Log(_hp);
+            }
+        }
     }
 }

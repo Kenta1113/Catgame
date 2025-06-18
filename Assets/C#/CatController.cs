@@ -1,5 +1,4 @@
 using System.Collections;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class CatMove : MonoBehaviour
@@ -10,6 +9,7 @@ public class CatMove : MonoBehaviour
     [SerializeField] private Sprite attackSprite;    // 攻撃時のスプライト
     [SerializeField] GameObject _scratchPrehub;
     [SerializeField] Transform _claw = default;
+
     [SerializeField] float _hp = 3f;
     [SerializeField] float _attackCooldown = 1f;
     float _lastAttackTime = -Mathf.Infinity;
@@ -20,6 +20,7 @@ public class CatMove : MonoBehaviour
     private Sprite defaultSprite;                    // 元のスプライト
     private bool isGrounded = false;
     private bool isScratching = false;
+
     public string _goalanime = "PlayerGoal";
     public string _gameover = "Gameover";
 
@@ -28,7 +29,7 @@ public class CatMove : MonoBehaviour
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
-        defaultSprite = sr.sprite; // 現在のスプライトを記録
+        defaultSprite = sr.sprite;
     }
 
     void Update()
@@ -43,7 +44,7 @@ public class CatMove : MonoBehaviour
             // 左右反転
             if (move != 0)
             {
-               transform.localScale = new Vector3(Mathf.Sign(move), 1, 1);
+                transform.localScale = new Vector3(Mathf.Sign(move), 1, 1);
             }
 
             // ジャンプ
@@ -59,22 +60,22 @@ public class CatMove : MonoBehaviour
         // 攻撃処理
         if (Input.GetButtonDown("Fire1") && !isScratching && Time.time >= _lastAttackTime + _attackCooldown)
         {
-            _lastAttackTime = Time.time; // クールダウン開始
+            _lastAttackTime = Time.time;
 
             StartCoroutine(DoScratch());
             Debug.Log("攻撃");
 
             var scratch = Instantiate(_scratchPrehub);
             scratch.transform.position = _claw.position;
-             int direction = transform.localScale.x > 0 ? 1 : -1;
+            int direction = transform.localScale.x > 0 ? 1 : -1;
 
-            Vector3 scratchScale =scratch.transform.localScale;
-            scratchScale.x=Mathf.Abs(scratchScale.x)*direction;
+            Vector3 scratchScale = scratch.transform.localScale;
+            scratchScale.x = Mathf.Abs(scratchScale.x) * direction;
             scratch.transform.localScale = scratchScale;
 
             ScratchController bc = scratch.GetComponent<ScratchController>();
             if (bc != null)
-                {
+            {
                 bc.SetDirection(direction);
             }
         }
@@ -84,13 +85,11 @@ public class CatMove : MonoBehaviour
     {
         isScratching = true;
 
-        // アニメーション止めてスプライト切り替え
         anim.enabled = false;
         sr.sprite = attackSprite;
 
         yield return new WaitForSeconds(_scratchDuration);
 
-        // 元のスプライトとアニメーションに戻す
         sr.sprite = defaultSprite;
         anim.enabled = true;
 
@@ -103,13 +102,15 @@ public class CatMove : MonoBehaviour
         {
             isGrounded = true;
         }
-        if(collision.gameObject.CompareTag("Enemy"))
+        else if (collision.gameObject.CompareTag("Enemy"))
         {
-            _hp = _hp - 1;
-            Debug.Log("ダメージを受けた");
-            if(_hp == 0)
+            _hp -= 1;
+            Debug.Log("ダメージを受けた → HP: " + _hp);
+            if (_hp <= 0)
             {
                 Debug.Log("Gameover");
+                anim.Play(_gameover);
+                rb.velocity = Vector2.zero;
             }
         }
     }
@@ -122,4 +123,12 @@ public class CatMove : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Item"))
+        {
+            _hp += 1;
+            Debug.Log("HPを回復 → HP: " + _hp);
+        }
+    }
 }
