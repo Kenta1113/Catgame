@@ -10,6 +10,7 @@ public class CatMove : MonoBehaviour
     [SerializeField] private Sprite attackSprite;    // 攻撃時のスプライト
     [SerializeField] GameObject _scratchPrehub;
     [SerializeField] Transform _claw = default;
+    [SerializeField] float _hp = 3f;
 
     private Animator anim;
     private Rigidbody2D rb;
@@ -17,6 +18,8 @@ public class CatMove : MonoBehaviour
     private Sprite defaultSprite;                    // 元のスプライト
     private bool isGrounded = false;
     private bool isScratching = false;
+    public string _goalanime = "PlayerGoal";
+    public string _gameover = "Gameover";
 
     void Start()
     {
@@ -96,6 +99,15 @@ public class CatMove : MonoBehaviour
         {
             isGrounded = true;
         }
+        if(collision.gameObject.CompareTag("Enemy"))
+        {
+            _hp = _hp - 1;
+            Debug.Log("ダメージを受けた");
+            if(_hp == 0)
+            {
+                Debug.Log("Gameover");
+            }
+        }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
@@ -105,4 +117,5 @@ public class CatMove : MonoBehaviour
             isGrounded = false;
         }
     }
+
 }

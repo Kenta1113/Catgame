@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 3111353412308075361}
   - component: {fileID: 6577955807054545982}
   - component: {fileID: 4405833313494134592}
+  - component: {fileID: 8939926279907497152}
   - component: {fileID: 6964601563822052099}
   m_Layer: 0
-  m_Name: Player
+  m_Name: player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,10 +30,11 @@ Transform:
   m_GameObject: {fileID: 6672867556906224263}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.4, y: -1.21, z: 0}
+  m_LocalPosition: {x: -58.9, y: -0.51, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 7088746110523029343}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3111353412308075361
@@ -119,7 +121,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.24526238, y: 0.17502332}
+  m_Offset: {x: 0.6400738, y: 0.47182465}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -130,7 +132,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.017449, y: 1.4609351}
+  m_Size: {x: 5.2289753, y: 4.6712875}
   m_EdgeRadius: 0
 --- !u!50 &4405833313494134592
 Rigidbody2D:
@@ -158,7 +160,25 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
+--- !u!114 &8939926279907497152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6672867556906224263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dda4fe1c87b7e347b6bb111e66a5393, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 3
+  _jump: 10
+  _scratchDuration: 0.3
+  attackSprite: {fileID: 21300000, guid: a6d7610a5ac807d4eabc60725799f3b6, type: 3}
+  _scratchPrehub: {fileID: 3973759278028119220, guid: 910fd87055141da4ba68d20c10501605, type: 3}
+  _claw: {fileID: 7088746110523029343}
 --- !u!95 &6964601563822052099
 Animator:
   serializedVersion: 5
@@ -180,3 +200,34 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &7044743360920678891
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7088746110523029343}
+  m_Layer: 0
+  m_Name: Claw
+  m_TagString: Untagged
+  m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7088746110523029343
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7044743360920678891}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4.1400003, y: 0.060000002, z: 0.012532462}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1430702842216199590}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

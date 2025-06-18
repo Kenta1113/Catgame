@@ -7,6 +7,7 @@ public class EnemyControllere : MonoBehaviour
     [SerializeField] float _speed = 3.0f;
     [SerializeField] string direction = "left";
     [SerializeField] float range = 0f;
+    [SerializeField] float _hp = 1f;
 
     Vector3 defPos;
     Vector3 defaultscale;
@@ -64,6 +65,16 @@ public class EnemyControllere : MonoBehaviour
         {
             direction = "right";
             transform.localScale = new Vector3(-defaultscale.x, defaultscale.y, defaultscale.z);
+        }
+        if (collision.gameObject.CompareTag("Attack"))
+        {
+            _hp = _hp - 1;
+            Debug.Log("ÉvÉåÉCÉÑÅ[Ç©ÇÁçUåÇÇéÛÇØÇΩ");
+            if (_hp == 0)
+            {
+                Destroy(this.gameObject);
+                Debug.Log("Ç‚ÇÁÇÍÇΩÅ`");
+            }
         }
     }
 }
