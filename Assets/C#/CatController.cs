@@ -11,6 +11,8 @@ public class CatMove : MonoBehaviour
     [SerializeField] GameObject _scratchPrehub;
     [SerializeField] Transform _claw = default;
     [SerializeField] float _hp = 3f;
+    [SerializeField] float _attackCooldown = 1f;
+    float _lastAttackTime = -Mathf.Infinity;
 
     private Animator anim;
     private Rigidbody2D rb;
@@ -55,8 +57,10 @@ public class CatMove : MonoBehaviour
         }
 
         // 攻撃処理
-        if (Input.GetButtonDown("Fire1") && !isScratching &&isGrounded)
+        if (Input.GetButtonDown("Fire1") && !isScratching && Time.time >= _lastAttackTime + _attackCooldown)
         {
+            _lastAttackTime = Time.time; // クールダウン開始
+
             StartCoroutine(DoScratch());
             Debug.Log("攻撃");
 
