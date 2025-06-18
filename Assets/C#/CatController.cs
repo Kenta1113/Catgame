@@ -109,7 +109,7 @@ public class CatMove : MonoBehaviour
             if (_hp <= 0)
             {
                 Debug.Log("Gameover");
-                anim.Play(_gameover);
+                //anim.Play(_gameover);
                 rb.velocity = Vector2.zero;
             }
         }
