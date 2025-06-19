@@ -12,7 +12,7 @@ public class JumpPad : MonoBehaviour
 
             if (rb != null)
             {
-                Debug.Log("”½‰ž‚Í‚µ‚Ä‚é‚¼");
+                Debug.Log("ƒWƒƒƒ“ƒv");
                 Vector2 currentVelocity = rb.velocity;
                 currentVelocity.y = 0;
                 rb.velocity = currentVelocity;
