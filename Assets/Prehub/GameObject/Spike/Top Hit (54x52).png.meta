@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: ed8f86edf3aa7384099c2aeeb56c9001
+guid: 8e677b8ff725620489a0200c8ee56a39
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 9190495600968484363
-    second: Bottom Hit (54x52)_0
+      213: -4239752841431299310
+    second: Top Hit (54x52)_0
   - first:
-      213: -1320871119520207472
-    second: Bottom Hit (54x52)_1
+      213: 5222327376163656147
+    second: Top Hit (54x52)_1
   - first:
-      213: 8334726039568525333
-    second: Bottom Hit (54x52)_2
+      213: 670804150163282626
+    second: Top Hit (54x52)_2
   - first:
-      213: -8052679187600627163
-    second: Bottom Hit (54x52)_3
+      213: -4422153292065143677
+    second: Top Hit (54x52)_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,7 +109,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Bottom Hit (54x52)_0
+      name: Top Hit (54x52)_0
       rect:
         serializedVersion: 2
         x: 0
@@ -123,14 +123,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 81e946526d4df0246afed9b189d28c06
-      internalID: 9190495600968484363
+      spriteID: a3fc0b93616f60a44bb12447c4d1aff8
+      internalID: -4239752841431299310
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bottom Hit (54x52)_1
+      name: Top Hit (54x52)_1
       rect:
         serializedVersion: 2
         x: 54
@@ -144,14 +144,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bb12bc981630c3f4a9cf2913aa86986d
-      internalID: -1320871119520207472
+      spriteID: b3943b947596c0f4e825d9a4930d99ec
+      internalID: 5222327376163656147
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bottom Hit (54x52)_2
+      name: Top Hit (54x52)_2
       rect:
         serializedVersion: 2
         x: 108
@@ -165,14 +165,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ac0c14eb0e0c5f849b12834d17006af4
-      internalID: 8334726039568525333
+      spriteID: 5f3194b23779fd34aabced127a434ed8
+      internalID: 670804150163282626
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bottom Hit (54x52)_3
+      name: Top Hit (54x52)_3
       rect:
         serializedVersion: 2
         x: 162
@@ -186,8 +186,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 422516d8517ae9d41ae6e3a44693f352
-      internalID: -8052679187600627163
+      spriteID: 931f5fe17097e1b4887c0d24cf6a6874
+      internalID: -4422153292065143677
       vertices: []
       indices: 
       edges: []
@@ -203,10 +203,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Bottom Hit (54x52)_0: 9190495600968484363
-      Bottom Hit (54x52)_1: -1320871119520207472
-      Bottom Hit (54x52)_2: 8334726039568525333
-      Bottom Hit (54x52)_3: -8052679187600627163
+      Top Hit (54x52)_0: -4239752841431299310
+      Top Hit (54x52)_1: 5222327376163656147
+      Top Hit (54x52)_2: 670804150163282626
+      Top Hit (54x52)_3: -4422153292065143677
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

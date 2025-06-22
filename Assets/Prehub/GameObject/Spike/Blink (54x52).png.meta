@@ -1,31 +1,19 @@
 fileFormatVersion: 2
-guid: e9a01895f60fa1f479b0147d010860a1
+guid: 6d40b997ef9de4e4b8327c102243d1f9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3049067163339015078
-    second: On (38x38)_0
+      213: 4303423874142921733
+    second: Blink (54x52)_0
   - first:
-      213: 5023087293052794153
-    second: On (38x38)_1
+      213: 7370585508839877132
+    second: Blink (54x52)_1
   - first:
-      213: 3635640145415724294
-    second: On (38x38)_2
+      213: 18105601139653782
+    second: Blink (54x52)_2
   - first:
-      213: -3382226459320202674
-    second: On (38x38)_3
-  - first:
-      213: 6766133057857300771
-    second: On (38x38)_4
-  - first:
-      213: -6071002419338243549
-    second: On (38x38)_5
-  - first:
-      213: -7001973787898513139
-    second: On (38x38)_6
-  - first:
-      213: -7336932856281768672
-    second: On (38x38)_7
+      213: 4110720337494812178
+    second: Blink (54x52)_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -121,13 +109,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: On (38x38)_0
+      name: Blink (54x52)_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 38
-        height: 38
+        width: 54
+        height: 52
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -135,20 +123,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 978efec6a4e426c469eaa6df7c4c2d9b
-      internalID: -3049067163339015078
+      spriteID: bf03bd91a1f05da49a82d8cec006f78e
+      internalID: 4303423874142921733
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: On (38x38)_1
+      name: Blink (54x52)_1
       rect:
         serializedVersion: 2
-        x: 38
+        x: 54
         y: 0
-        width: 38
-        height: 38
+        width: 54
+        height: 52
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -156,20 +144,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fcff34e9b32d98049b202e09a66b5545
-      internalID: 5023087293052794153
+      spriteID: be9166cb19eae5e4cae0d9d8955ab751
+      internalID: 7370585508839877132
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: On (38x38)_2
+      name: Blink (54x52)_2
       rect:
         serializedVersion: 2
-        x: 76
+        x: 108
         y: 0
-        width: 38
-        height: 38
+        width: 54
+        height: 52
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -177,20 +165,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 217c9e5c54e8eef42ac87b7dea22a4c9
-      internalID: 3635640145415724294
+      spriteID: 0bd42a8700c588c438b4c4d9ca33e60b
+      internalID: 18105601139653782
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: On (38x38)_3
+      name: Blink (54x52)_3
       rect:
         serializedVersion: 2
-        x: 114
+        x: 162
         y: 0
-        width: 38
-        height: 38
+        width: 54
+        height: 52
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -198,92 +186,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3bbcc804402d28049aa89c821f4aef7c
-      internalID: -3382226459320202674
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: On (38x38)_4
-      rect:
-        serializedVersion: 2
-        x: 152
-        y: 0
-        width: 38
-        height: 38
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4ebb23c116d33194b8a05e3f751ff09d
-      internalID: 6766133057857300771
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: On (38x38)_5
-      rect:
-        serializedVersion: 2
-        x: 190
-        y: 0
-        width: 38
-        height: 38
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0f89a90399d25e54ba12f6494139187c
-      internalID: -6071002419338243549
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: On (38x38)_6
-      rect:
-        serializedVersion: 2
-        x: 228
-        y: 0
-        width: 38
-        height: 38
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8eeb0ccad161fcf498bc5d7cd895b861
-      internalID: -7001973787898513139
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: On (38x38)_7
-      rect:
-        serializedVersion: 2
-        x: 266
-        y: 0
-        width: 38
-        height: 38
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d7538bc1370adcc4e812dee9429607e3
-      internalID: -7336932856281768672
+      spriteID: e5894c1068d0f5e4d8c65ca99dd164a5
+      internalID: 4110720337494812178
       vertices: []
       indices: 
       edges: []
@@ -299,14 +203,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      On (38x38)_0: -3049067163339015078
-      On (38x38)_1: 5023087293052794153
-      On (38x38)_2: 3635640145415724294
-      On (38x38)_3: -3382226459320202674
-      On (38x38)_4: 6766133057857300771
-      On (38x38)_5: -6071002419338243549
-      On (38x38)_6: -7001973787898513139
-      On (38x38)_7: -7336932856281768672
+      Blink (54x52)_0: 4303423874142921733
+      Blink (54x52)_1: 7370585508839877132
+      Blink (54x52)_2: 18105601139653782
+      Blink (54x52)_3: 4110720337494812178
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

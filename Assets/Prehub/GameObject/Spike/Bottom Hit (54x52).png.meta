@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 13f37f36fefb49f439b17a5dac99667b
+guid: 6298f809549762f46b451dca5eb6c646
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4303423874142921733
-    second: Blink (54x52)_0
+      213: 9190495600968484363
+    second: Bottom Hit (54x52)_0
   - first:
-      213: 7370585508839877132
-    second: Blink (54x52)_1
+      213: -1320871119520207472
+    second: Bottom Hit (54x52)_1
   - first:
-      213: 18105601139653782
-    second: Blink (54x52)_2
+      213: 8334726039568525333
+    second: Bottom Hit (54x52)_2
   - first:
-      213: 4110720337494812178
-    second: Blink (54x52)_3
+      213: -8052679187600627163
+    second: Bottom Hit (54x52)_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,7 +109,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Blink (54x52)_0
+      name: Bottom Hit (54x52)_0
       rect:
         serializedVersion: 2
         x: 0
@@ -123,14 +123,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bf03bd91a1f05da49a82d8cec006f78e
-      internalID: 4303423874142921733
+      spriteID: 81e946526d4df0246afed9b189d28c06
+      internalID: 9190495600968484363
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Blink (54x52)_1
+      name: Bottom Hit (54x52)_1
       rect:
         serializedVersion: 2
         x: 54
@@ -144,14 +144,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: be9166cb19eae5e4cae0d9d8955ab751
-      internalID: 7370585508839877132
+      spriteID: bb12bc981630c3f4a9cf2913aa86986d
+      internalID: -1320871119520207472
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Blink (54x52)_2
+      name: Bottom Hit (54x52)_2
       rect:
         serializedVersion: 2
         x: 108
@@ -165,14 +165,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0bd42a8700c588c438b4c4d9ca33e60b
-      internalID: 18105601139653782
+      spriteID: ac0c14eb0e0c5f849b12834d17006af4
+      internalID: 8334726039568525333
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Blink (54x52)_3
+      name: Bottom Hit (54x52)_3
       rect:
         serializedVersion: 2
         x: 162
@@ -186,8 +186,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e5894c1068d0f5e4d8c65ca99dd164a5
-      internalID: 4110720337494812178
+      spriteID: 422516d8517ae9d41ae6e3a44693f352
+      internalID: -8052679187600627163
       vertices: []
       indices: 
       edges: []
@@ -203,10 +203,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Blink (54x52)_0: 4303423874142921733
-      Blink (54x52)_1: 7370585508839877132
-      Blink (54x52)_2: 18105601139653782
-      Blink (54x52)_3: 4110720337494812178
+      Bottom Hit (54x52)_0: 9190495600968484363
+      Bottom Hit (54x52)_1: -1320871119520207472
+      Bottom Hit (54x52)_2: 8334726039568525333
+      Bottom Hit (54x52)_3: -8052679187600627163
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -251,5 +251,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 777443dab5dfcb143833fd04d75c58e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scratchspeed: 7
-  _scratchtime: 1
+  _scratchspeed: 15
+  _scratchtime: 0.5
