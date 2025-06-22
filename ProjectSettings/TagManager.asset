@@ -8,6 +8,8 @@ TagManager:
   - Attack
   - Enemy
   - Item
+  - Start
+  - Fall
   layers:
   - Default
   - TransparentFX
