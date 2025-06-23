@@ -1004,6 +1004,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Catfood
       objectReference: {fileID: 0}
+    - target: {fileID: 1710067031663114630, guid: b30478becea22954eb98c3996e45d1d7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7617594031473570422, guid: b30478becea22954eb98c3996e45d1d7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 93.55
@@ -1285,18 +1289,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.008220673, y: -0.024652958}
+  m_Offset: {x: 0.031288147, y: 0.0049762726}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.6, y: 4.8}
+    oldSize: {x: 4, y: 3.4285715}
     newSize: {x: 0.28, y: 0.24}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.0715103, y: 4.126149}
+  m_Size: {x: 2.8863373, y: 2.842207}
   m_EdgeRadius: 0
 --- !u!212 &355443825
 SpriteRenderer:
@@ -1359,7 +1363,7 @@ Transform:
   m_GameObject: {fileID: 355443823}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 103.55, y: 11.14, z: 0}
+  m_LocalPosition: {x: 103.55, y: 10.49, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2066,11 +2070,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7576183323038019831, guid: 5b948ba126fdaf8459163087dca3de8a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -76.13056
+      value: 576.2695
       objectReference: {fileID: 0}
     - target: {fileID: 7576183323038019831, guid: 5b948ba126fdaf8459163087dca3de8a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.1576588
+      value: 41.85766
       objectReference: {fileID: 0}
     - target: {fileID: 7576183323038019831, guid: 5b948ba126fdaf8459163087dca3de8a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3386,11 +3390,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1430702842216199590, guid: a16e76d05d858fd40b09b44476a14b3b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -74.2
+      value: 578.2
       objectReference: {fileID: 0}
     - target: {fileID: 1430702842216199590, guid: a16e76d05d858fd40b09b44476a14b3b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.8
+      value: 38.9
       objectReference: {fileID: 0}
     - target: {fileID: 1430702842216199590, guid: a16e76d05d858fd40b09b44476a14b3b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3722,11 +3726,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8544357197482809503, guid: faaef9ee08dffd443bef2e73dbe485a6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -76.13056
+      value: 576.2695
       objectReference: {fileID: 0}
     - target: {fileID: 8544357197482809503, guid: faaef9ee08dffd443bef2e73dbe485a6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.1576588
+      value: 41.85766
       objectReference: {fileID: 0}
     - target: {fileID: 8544357197482809503, guid: faaef9ee08dffd443bef2e73dbe485a6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4356,7 +4360,7 @@ GameObject:
   - component: {fileID: 2003391749}
   m_Layer: 0
   m_Name: Checkpoint (Flag Idle)(64x64)_0
-  m_TagString: Untagged
+  m_TagString: Goal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4457,7 +4461,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.56088257, y: -1.7711859}

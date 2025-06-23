@@ -118,33 +118,51 @@ public class CatMove : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
+        {
             isGrounded = true;
+        }
         else if (collision.gameObject.CompareTag("Enemy"))
-            DieAndRespawn(); // 敵に当たったらミス扱い
+        {
+            _life--;
+            uIHPmanager.SetHp(_life);
+
+            if (_life <= 0)
+            {
+                Debug.Log("Game Over");
+                isControlEnabled = false;
+                FindObjectOfType<GameOverManager>().ShowGameOver();
+            }
+            else
+            {
+                Debug.Log("敵に当たった → 残機: " + _life);
+            }
+        }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
+        {
             isGrounded = false;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Fall"))
         {
-            DieAndRespawn(); // 落下死もここで処理
+            DieAndRespawn(); // 落下死など
         }
-        if (collision.CompareTag("Goal"))
+        else if (collision.CompareTag("Goal"))
         {
             FindObjectOfType<GameClearManager>().ShowGameClear();
         }
-        if (collision.CompareTag("Item"))
+        else if (collision.CompareTag("Item"))
         {
             _life++;
-            uIHPmanager.SetHp(_life);  // ← UI 更新！
+            uIHPmanager.SetHp(_life);
             Debug.Log("アイテムを取った！HP: " + _life);
+            Destroy(collision.gameObject); // 取得後削除したい場合
         }
-
     }
 }
