@@ -10,6 +10,7 @@ TagManager:
   - Item
   - Start
   - Fall
+  - Goal
   layers:
   - Default
   - TransparentFX

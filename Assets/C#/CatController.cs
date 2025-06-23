@@ -22,6 +22,7 @@ public class CatMove : MonoBehaviour
     private Sprite defaultSprite;
     private bool isGrounded = false;
     private bool isScratching = false;
+    private bool isControlEnabled = true;
 
     void Start()
     {
@@ -45,6 +46,8 @@ public class CatMove : MonoBehaviour
 
     void Update()
     {
+        if (!isControlEnabled) return;
+
         float move = Input.GetAxisRaw("Horizontal");
 
         if (!isScratching)
@@ -88,7 +91,8 @@ public class CatMove : MonoBehaviour
         if (_life <= 0)
         {
             Debug.Log("Game Over");
-            // ゲームオーバー処理
+            isControlEnabled = false;
+            FindObjectOfType<GameOverManager>().ShowGameOver();
             return;
         }
 
@@ -128,6 +132,19 @@ public class CatMove : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Fall"))
+        {
             DieAndRespawn(); // 落下死もここで処理
+        }
+        if (collision.CompareTag("Goal"))
+        {
+            FindObjectOfType<GameClearManager>().ShowGameClear();
+        }
+        if (collision.CompareTag("Item"))
+        {
+            _life++;
+            uIHPmanager.SetHp(_life);  // ← UI 更新！
+            Debug.Log("アイテムを取った！HP: " + _life);
+        }
+
     }
 }
