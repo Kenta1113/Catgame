@@ -2403,7 +2403,6 @@ MonoBehaviour:
   _jumpVolume: 2
   _healVolume: 1
   _damageVolume: 10
-  jumpSprite: {fileID: 21300000, guid: a7cd6d2d6f99ae045a87fd8af7b12f1a, type: 3}
 --- !u!1 &1052744912
 GameObject:
   m_ObjectHideFlags: 0
@@ -4228,6 +4227,14 @@ PrefabInstance:
     - target: {fileID: 6672867556906224263, guid: a16e76d05d858fd40b09b44476a14b3b, type: 3}
       propertyPath: m_Name
       value: player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6964601563822052099, guid: a16e76d05d858fd40b09b44476a14b3b, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 81ffe2e44303243479bcc46787e2bf51, type: 2}
+    - target: {fileID: 6964601563822052099, guid: a16e76d05d858fd40b09b44476a14b3b, type: 3}
+      propertyPath: m_UpdateMode
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
