@@ -93,13 +93,17 @@ public class EnemyControllere : MonoBehaviour
             if (_hp <= 0)
             {
                 Debug.Log("‚â‚ç‚ê‚½`");
-                // Ž€–SŽž‚Ì‰¹‚ð–Â‚ç‚·
                 if (_deathSound != null && audioSource != null)
                 {
                     audioSource.PlayOneShot(_deathSound, _deathVolume);
+                    Destroy(this.gameObject, _deathSound.length); // ‰¹‚ª–Â‚èI‚í‚Á‚Ä‚©‚ç”j‰ó
                 }
-                Destroy(this.gameObject);
+                else
+                {
+                    Destroy(this.gameObject);
+                }
             }
         }
     }
+
 }

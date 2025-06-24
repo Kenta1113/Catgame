@@ -13,7 +13,6 @@ public class CatMove : MonoBehaviour
     [SerializeField] float _attackCooldown = 1f;
     [SerializeField] UIHPmanager uIHPmanager;
 
-    //  各種効果音
     [SerializeField] private AudioClip _attackSound;
     [SerializeField] private AudioClip _jumpSound;
     [SerializeField] private AudioClip _healSound;
@@ -33,6 +32,7 @@ public class CatMove : MonoBehaviour
     private bool isGrounded = false;
     private bool isScratching = false;
     private bool isControlEnabled = true;
+
     private AudioSource audioSource;
 
     void Start()
@@ -73,7 +73,6 @@ public class CatMove : MonoBehaviour
             {
                 rb.velocity = new Vector2(rb.velocity.x, _jump);
 
-                //  ジャンプ音再生
                 if (_jumpSound != null) audioSource.PlayOneShot(_jumpSound, _jumpVolume);
             }
 
@@ -107,7 +106,6 @@ public class CatMove : MonoBehaviour
         _life--;
         uIHPmanager.SetHp(_life);
 
-        //  ダメージ音
         if (_damageSound != null) audioSource.PlayOneShot(_damageSound, _damageVolume);
 
         if (_life <= 0)
@@ -148,7 +146,6 @@ public class CatMove : MonoBehaviour
             _life--;
             uIHPmanager.SetHp(_life);
 
-            //  ダメージ音
             if (_damageSound != null) audioSource.PlayOneShot(_damageSound, _damageVolume);
 
             if (_life <= 0)
@@ -187,7 +184,6 @@ public class CatMove : MonoBehaviour
             _life++;
             uIHPmanager.SetHp(_life);
 
-            //  回復音
             if (_healSound != null) audioSource.PlayOneShot(_healSound, _healVolume);
 
             Debug.Log("アイテムを取った！HP: " + _life);
