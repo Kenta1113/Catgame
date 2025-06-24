@@ -2,18 +2,52 @@ using UnityEngine;
 
 public class SimpleLift : MonoBehaviour
 {
-    [SerializeField] float _moveSpeed = 2;
-    [SerializeField] float _moveRange = 5; // 上下の移動範囲
+    [SerializeField] float _moveSpeed = 2f;
+    [SerializeField] float _moveRange = 5f;
+
+    [SerializeField] private AudioClip _liftSound;  // 動作音
+    [SerializeField] private float _volume = 1f;
 
     private bool goingUp = true;
     private Vector3 startPos;
 
+    private AudioSource audioSource;
+    private Renderer rend;
+
     void Start()
     {
         startPos = transform.position;
+
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+            audioSource = gameObject.AddComponent<AudioSource>();
+
+        audioSource.clip = _liftSound;
+        audioSource.loop = true;
+        audioSource.volume = _volume;
+
+        rend = GetComponent<Renderer>();
     }
 
     void Update()
+    {
+        if (rend != null && rend.isVisible)
+        {
+            MoveLift();
+
+            // 音が鳴ってなければ再生
+            if (!audioSource.isPlaying)
+                audioSource.Play();
+        }
+        else
+        {
+            // 見えなければ音を止める
+            if (audioSource.isPlaying)
+                audioSource.Stop();
+        }
+    }
+
+    private void MoveLift()
     {
         Vector3 pos = transform.position;
         float offsetY = pos.y - startPos.y;
@@ -39,15 +73,13 @@ public class SimpleLift : MonoBehaviour
 
         transform.position = pos;
     }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            // すでに親になってないか確認
             if (collision.transform.parent != this.transform)
-            {
                 collision.transform.SetParent(this.transform);
-            }
         }
     }
 
@@ -55,11 +87,8 @@ public class SimpleLift : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            // Liftがアクティブのときのみ SetParent(null) を行う
             if (gameObject.activeInHierarchy)
-            {
                 collision.transform.SetParent(null);
-            }
         }
     }
 }

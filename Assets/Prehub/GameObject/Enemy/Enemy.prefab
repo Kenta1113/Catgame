@@ -133,6 +133,10 @@ MonoBehaviour:
   groundCheck: {fileID: 5405980553377192210}
   frontCheck: {fileID: 5028363190507481868}
   checkDistance: 0.3
+  _crySound: {fileID: 8300000, guid: a8406105d70e04846b35870b2ee6e982, type: 3}
+  _cryVolume: 1
+  _deathSound: {fileID: 8300000, guid: a85fc599bcd91cc45ad1214ad0ad1898, type: 3}
+  _deathVolume: 3
 --- !u!61 &2136157022609276881
 BoxCollider2D:
   m_ObjectHideFlags: 0

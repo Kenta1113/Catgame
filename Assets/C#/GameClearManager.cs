@@ -5,22 +5,25 @@ using UnityEngine.UI;
 public class GameClearManager : MonoBehaviour
 {
     [SerializeField] GameObject gameClearPanel;
+    [SerializeField] GameObject gameClearImage; // Å© âÊëúÇÃí«â¡
     [SerializeField] Button titleButton;
 
-    [SerializeField] AudioClip gameClearBGM; // Åöí«â¡
+    [SerializeField] AudioClip gameClearBGM;
 
     private void Start()
     {
-        gameClearPanel.SetActive(false);
-        titleButton.onClick.AddListener(GoToTitle);
+        if (gameClearPanel != null) gameClearPanel.SetActive(false);
+        if (gameClearImage != null) gameClearImage.SetActive(false);
+        if (titleButton != null) titleButton.onClick.AddListener(GoToTitle);
     }
 
     public void ShowGameClear()
     {
-        gameClearPanel.SetActive(true);
+        if (gameClearPanel != null) gameClearPanel.SetActive(true);
+        if (gameClearImage != null) gameClearImage.SetActive(true);
+
         Time.timeScale = 0f;
 
-        // ÅöBGMêÿÇËë÷Ç¶
         if (BGMPlayer.Instance != null && gameClearBGM != null)
         {
             BGMPlayer.Instance.PlayBGM(gameClearBGM);

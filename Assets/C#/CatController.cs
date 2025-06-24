@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using UnityEngine;
 
 public class CatMove : MonoBehaviour
@@ -13,8 +13,15 @@ public class CatMove : MonoBehaviour
     [SerializeField] float _attackCooldown = 1f;
     [SerializeField] UIHPmanager uIHPmanager;
 
-    [SerializeField] private AudioClip _attackSound;         // ©’Ç‰ÁFUŒ‚‰¹
-    [SerializeField] private float _attackVolume = 1.0f;     // ©’Ç‰ÁF‰¹—Ê
+    //  å„ç¨®åŠ¹æœéŸ³
+    [SerializeField] private AudioClip _attackSound;
+    [SerializeField] private AudioClip _jumpSound;
+    [SerializeField] private AudioClip _healSound;
+    [SerializeField] private AudioClip _damageSound;
+    [SerializeField] private float _attackVolume = 1.0f;
+    [SerializeField] private float _jumpVolume = 2.0f;
+    [SerializeField] private float _healVolume = 1.0f;
+    [SerializeField] private float _damageVolume = 1.0f;
 
     Transform _respawnPoint;
 
@@ -26,7 +33,7 @@ public class CatMove : MonoBehaviour
     private bool isGrounded = false;
     private bool isScratching = false;
     private bool isControlEnabled = true;
-    private AudioSource audioSource;                         // ©’Ç‰ÁFAudioSource
+    private AudioSource audioSource;
 
     void Start()
     {
@@ -34,7 +41,7 @@ public class CatMove : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         defaultSprite = sr.sprite;
-        audioSource = GetComponent<AudioSource>();           // ©’Ç‰ÁFAudioSourceæ“¾
+        audioSource = GetComponent<AudioSource>();
 
         GameObject startObj = GameObject.FindGameObjectWithTag("Start");
         if (startObj != null)
@@ -43,7 +50,7 @@ public class CatMove : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Startƒ^ƒO‚ª‚Â‚¢‚½ƒIƒuƒWƒFƒNƒg‚ªŒ©‚Â‚©‚è‚Ü‚¹‚ñI");
+            Debug.LogError("Startã‚¿ã‚°ãŒã¤ã„ãŸã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆãŒè¦‹ã¤ã‹ã‚Šã¾ã›ã‚“ï¼");
         }
 
         uIHPmanager.SetHp(_life);
@@ -63,7 +70,12 @@ public class CatMove : MonoBehaviour
                 transform.localScale = new Vector3(Mathf.Sign(move), 1, 1);
 
             if (Input.GetButtonDown("Jump") && isGrounded)
+            {
                 rb.velocity = new Vector2(rb.velocity.x, _jump);
+
+                //  ã‚¸ãƒ£ãƒ³ãƒ—éŸ³å†ç”Ÿ
+                if (_jumpSound != null) audioSource.PlayOneShot(_jumpSound, _jumpVolume);
+            }
 
             anim.speed = (isGrounded && move != 0) ? 1f : 0f;
         }
@@ -73,13 +85,9 @@ public class CatMove : MonoBehaviour
             _lastAttackTime = Time.time;
 
             StartCoroutine(DoScratch());
-            Debug.Log("UŒ‚");
+            Debug.Log("æ”»æ’ƒ");
 
-            // UŒ‚‰¹‚ğ–Â‚ç‚·
-            if (_attackSound != null && audioSource != null)
-            {
-                audioSource.PlayOneShot(_attackSound, _attackVolume);
-            }
+            if (_attackSound != null) audioSource.PlayOneShot(_attackSound, _attackVolume);
 
             var scratch = Instantiate(_scratchPrefab);
             scratch.transform.position = _claw.position;
@@ -99,6 +107,9 @@ public class CatMove : MonoBehaviour
         _life--;
         uIHPmanager.SetHp(_life);
 
+        //  ãƒ€ãƒ¡ãƒ¼ã‚¸éŸ³
+        if (_damageSound != null) audioSource.PlayOneShot(_damageSound, _damageVolume);
+
         if (_life <= 0)
         {
             Debug.Log("Game Over");
@@ -107,7 +118,7 @@ public class CatMove : MonoBehaviour
             return;
         }
 
-        Debug.Log("c‹@: " + _life + " ¨ ƒŠƒXƒ|[ƒ“");
+        Debug.Log("æ®‹æ©Ÿ: " + _life + " â†’ ãƒªã‚¹ãƒãƒ¼ãƒ³");
 
         transform.position = _respawnPoint.position;
         rb.velocity = Vector2.zero;
@@ -137,6 +148,9 @@ public class CatMove : MonoBehaviour
             _life--;
             uIHPmanager.SetHp(_life);
 
+            //  ãƒ€ãƒ¡ãƒ¼ã‚¸éŸ³
+            if (_damageSound != null) audioSource.PlayOneShot(_damageSound, _damageVolume);
+
             if (_life <= 0)
             {
                 Debug.Log("Game Over");
@@ -145,7 +159,7 @@ public class CatMove : MonoBehaviour
             }
             else
             {
-                Debug.Log("“G‚É“–‚½‚Á‚½ ¨ c‹@: " + _life);
+                Debug.Log("æ•µã«å½“ãŸã£ãŸ â†’ æ®‹æ©Ÿ: " + _life);
             }
         }
     }
@@ -162,7 +176,7 @@ public class CatMove : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Fall"))
         {
-            DieAndRespawn(); // —‰º€‚È‚Ç
+            DieAndRespawn();
         }
         else if (collision.CompareTag("Goal"))
         {
@@ -172,8 +186,12 @@ public class CatMove : MonoBehaviour
         {
             _life++;
             uIHPmanager.SetHp(_life);
-            Debug.Log("ƒAƒCƒeƒ€‚ğæ‚Á‚½IHP: " + _life);
-            Destroy(collision.gameObject); // æ“¾Œãíœ‚µ‚½‚¢ê‡
+
+            //  å›å¾©éŸ³
+            if (_healSound != null) audioSource.PlayOneShot(_healSound, _healVolume);
+
+            Debug.Log("ã‚¢ã‚¤ãƒ†ãƒ ã‚’å–ã£ãŸï¼HP: " + _life);
+            Destroy(collision.gameObject);
         }
     }
 }

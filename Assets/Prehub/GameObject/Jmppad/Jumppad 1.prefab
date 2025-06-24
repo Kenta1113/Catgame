@@ -99,6 +99,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpForce: 20
+  _jumpPadSound: {fileID: 8300000, guid: 3cc907131e14aa842b1bcb440fe1109d, type: 3}
+  _volume: 1
 --- !u!61 &6400624873403451307
 BoxCollider2D:
   m_ObjectHideFlags: 0

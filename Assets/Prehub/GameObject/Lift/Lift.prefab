@@ -145,3 +145,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _moveSpeed: 5
   _moveRange: 15
+  _liftSound: {fileID: 8300000, guid: 57f2700ebf3484b4c9c1c830b6d831bf, type: 3}
+  _volume: 0.1
