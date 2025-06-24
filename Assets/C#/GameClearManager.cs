@@ -7,6 +7,8 @@ public class GameClearManager : MonoBehaviour
     [SerializeField] GameObject gameClearPanel;
     [SerializeField] Button titleButton;
 
+    [SerializeField] AudioClip gameClearBGM; // ★追加
+
     private void Start()
     {
         gameClearPanel.SetActive(false);
@@ -16,12 +18,18 @@ public class GameClearManager : MonoBehaviour
     public void ShowGameClear()
     {
         gameClearPanel.SetActive(true);
-        Time.timeScale = 0f; // ゲーム停止（演出中）
+        Time.timeScale = 0f;
+
+        // ★BGM切り替え
+        if (BGMPlayer.Instance != null && gameClearBGM != null)
+        {
+            BGMPlayer.Instance.PlayBGM(gameClearBGM);
+        }
     }
 
     void GoToTitle()
     {
-        Time.timeScale = 1f; // 時間を戻す
-        SceneManager.LoadScene("TitleScene"); // ビルドに追加されてるか確認！
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("TitleScene");
     }
 }

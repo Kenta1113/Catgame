@@ -1,6 +1,6 @@
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameOverManager : MonoBehaviour
 {
@@ -8,6 +8,8 @@ public class GameOverManager : MonoBehaviour
     [SerializeField] GameObject gameOverText;
     [SerializeField] Button retryButton;
     [SerializeField] Button titleButton;
+
+    [SerializeField] AudioClip gameOverBGM; // Åöí«â¡
 
     private void Start()
     {
@@ -28,6 +30,12 @@ public class GameOverManager : MonoBehaviour
         if (titleButton != null) titleButton.gameObject.SetActive(true);
 
         Time.timeScale = 0f;
+
+        // ÅöBGMêÿÇËë÷Ç¶
+        if (BGMPlayer.Instance != null && gameOverBGM != null)
+        {
+            BGMPlayer.Instance.PlayBGM(gameOverBGM);
+        }
     }
 
     public void Retry()
@@ -37,7 +45,7 @@ public class GameOverManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    public  void GoToTitle()
+    public void GoToTitle()
     {
         Debug.Log("TitleÉ{É^ÉìÇ™âüÇ≥ÇÍÇ‹ÇµÇΩÅI");
         Time.timeScale = 1f;

@@ -349,8 +349,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6e9a0b895e9bc943b406a610a5874b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bgm: {fileID: 8300000, guid: b52b87141cb996c4d9681e544cd8682a, type: 3}
-  _BGMVolume: 0.5
+  defaultBGM: {fileID: 8300000, guid: 539c01155033e4c4c813d3b029df51f0, type: 3}
+  titleBGM: {fileID: 8300000, guid: b52b87141cb996c4d9681e544cd8682a, type: 3}
+  gameOverBGM: {fileID: 8300000, guid: 796af37a0dd23884cabd3aa43bf106fd, type: 3}
+  gameClearBGM: {fileID: 8300000, guid: 26dc6951bd81f004693bef99caf70e14, type: 3}
+  _volume: 0.5
 --- !u!4 &663575100
 Transform:
   m_ObjectHideFlags: 0
@@ -1391,7 +1394,7 @@ SceneRoots:
   - {fileID: 227229163}
   - {fileID: 1508517419}
   - {fileID: 1007564746}
+  - {fileID: 1846389769}
   - {fileID: 887351579}
   - {fileID: 1812618885}
   - {fileID: 663575100}
-  - {fileID: 1846389769}

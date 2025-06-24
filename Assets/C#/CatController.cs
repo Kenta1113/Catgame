@@ -13,6 +13,9 @@ public class CatMove : MonoBehaviour
     [SerializeField] float _attackCooldown = 1f;
     [SerializeField] UIHPmanager uIHPmanager;
 
+    [SerializeField] private AudioClip _attackSound;         // Å©í«â¡ÅFçUåÇâπ
+    [SerializeField] private float _attackVolume = 1.0f;     // Å©í«â¡ÅFâπó 
+
     Transform _respawnPoint;
 
     float _lastAttackTime = -Mathf.Infinity;
@@ -23,6 +26,7 @@ public class CatMove : MonoBehaviour
     private bool isGrounded = false;
     private bool isScratching = false;
     private bool isControlEnabled = true;
+    private AudioSource audioSource;                         // Å©í«â¡ÅFAudioSource
 
     void Start()
     {
@@ -30,6 +34,7 @@ public class CatMove : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         defaultSprite = sr.sprite;
+        audioSource = GetComponent<AudioSource>();           // Å©í«â¡ÅFAudioSourceéÊìæ
 
         GameObject startObj = GameObject.FindGameObjectWithTag("Start");
         if (startObj != null)
@@ -69,6 +74,12 @@ public class CatMove : MonoBehaviour
 
             StartCoroutine(DoScratch());
             Debug.Log("çUåÇ");
+
+            // çUåÇâπÇñ¬ÇÁÇ∑
+            if (_attackSound != null && audioSource != null)
+            {
+                audioSource.PlayOneShot(_attackSound, _attackVolume);
+            }
 
             var scratch = Instantiate(_scratchPrefab);
             scratch.transform.position = _claw.position;
