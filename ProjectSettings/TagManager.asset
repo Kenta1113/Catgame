@@ -5,6 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - Attack
+  - Enemy
+  - Item
+  - Start
+  - Fall
+  - Goal
   layers:
   - Default
   - TransparentFX
